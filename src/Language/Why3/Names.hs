@@ -1,3 +1,9 @@
+{-# LANGUAGE CPP #-}
+
+#ifndef MIN_VERSION_base
+#define MIN_VERSION_base(x,y,z) 1
+#endif
+
 -- | Functions for working with names.
 module Language.Why3.Names
   ( countUses
@@ -8,19 +14,21 @@ module Language.Why3.Names
 
 import Language.Why3.AST
 
-import           Data.List (foldl')
-import           Data.Monoid ((<>))
+import           Data.List (foldl', find, mapAccumL)
 
 import           Data.Map  ( Map )
 import qualified Data.Map as Map
 import qualified Data.Map.Strict as MapStrict
-
 import           Data.Set  ( Set )
 import qualified Data.Set as Set
 
-import Data.List (find, mapAccumL)
-
 import qualified Data.Text as Text
+
+#if MIN_VERSION_base(4,8,0)
+import           Data.Monoid ((<>))
+#else
+import           Data.Monoid (Monoid(..), (<>))
+#endif
 
 -- | Find free names in an expression
 freeNames :: Expr -> Set Name
