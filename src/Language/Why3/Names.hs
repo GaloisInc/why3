@@ -18,7 +18,7 @@ import qualified Data.Map.Strict as MapStrict
 import           Data.Set  ( Set )
 import qualified Data.Set as Set
 
-import Data.List (mapAccumL)
+import Data.List (find, mapAccumL)
 
 import qualified Data.Text as Text
 
