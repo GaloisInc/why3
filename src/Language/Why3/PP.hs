@@ -194,5 +194,3 @@ wrap n prec d = if prec >= n then parens d else d
 
 ppText :: Text -> Doc
 ppText = text . Text.unpack
-
-
