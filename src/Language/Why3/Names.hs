@@ -28,6 +28,7 @@ import qualified Data.Text as Text
 import           Data.Monoid ((<>))
 #else
 import           Data.Monoid (Monoid(..), (<>))
+import           Data.Foldable (foldMap)
 #endif
 
 -- | Find free names in an expression
