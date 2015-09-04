@@ -1,7 +1,7 @@
 name:                why3
 version:             0.8
 synopsis:            Haskell support for the Why3 input format.
-license:             MIT
+license:             BSD3
 license-file:        LICENSE
 author:              Galois, Inc.
 maintainer:          sjw@galois.com
